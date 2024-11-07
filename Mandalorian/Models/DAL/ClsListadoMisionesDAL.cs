@@ -7,8 +7,8 @@ namespace EjercicioMandalorianASP.Models.DAL
     /// </summary>
     public static class ClsListadoMisionesDAL
     {
-        private static List<ClsMision> listaMisionesDal;
-        private static ClsMision mision;
+        private static List<ClsMision>? listaMisionesDal;
+        private static ClsMision? mision;
         /// <summary>
         /// Rellena la lista de misiones
         /// </summary>
@@ -17,7 +17,7 @@ namespace EjercicioMandalorianASP.Models.DAL
         {
             listaMisionesDal = new List<ClsMision>
         {
-
+            
             new ClsMision(1,"Rescate de Baby Yoda", "Debes hacerte con Grogu y llevárselo a Luke SkyWalker para su entrenamiento.",5000),
             new ClsMision(2,"Recuperar armadura Beskar", "Tu armadura de Beskar ha sido robada. Debes encontrarla.",2000  ),
             new ClsMision(3,"Planeta Sorgon", "Debes llevar a un niño de vuelta a su planeta natal “Sorgon”.",500  ),
@@ -30,7 +30,7 @@ namespace EjercicioMandalorianASP.Models.DAL
         /// </summary>
         /// <param name="id"></param>
         /// <returns>devuelve un objeto mision</returns>
-        public static ClsMision ObtenerMisionDAL(int id)
+        public static ClsMision? ObtenerMisionDAL(int id)
         {
             mision = new ClsMision();
             mision = listaMisionesDal.FirstOrDefault(e => e.Id == id);
