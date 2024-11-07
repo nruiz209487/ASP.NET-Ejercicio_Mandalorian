@@ -1,0 +1,58 @@
+﻿
+
+Models
+----------------------------------------------------------------------------------
+	ENT:
+	------------------------------------------------------------------------------
+	ClsMision
+		   + Int id {Get}
+		   + String titulo {Get}
+		   + String descripcion {Get}
+		   + Int recompesa {Get}
+
+				ClsMision()
+				ClsMision(id,titulo,titulo,recompesa)
+
+	DAL:
+    ------------------------------------------------------------------------------
+	ClsListadoMisiones
+	       - static List<ClsMision>? listaMisionesBL
+           - static ClsMision? mision
+		   + ObtenerListadoDeMisionesDAL<ClsMision>()
+		   + ObtenerMisioneDAL<ClsMision>(int Id)  
+	     
+	BL:
+	------------------------------------------------------------------------------
+	ClsListadoMisionesBL
+	       - static List<ClsMision>? listaMisionesBL
+           - static ClsMision? mision
+		   + ObtenerListadoDeMisionesBL<ClsMision>()  
+		   + ObtenerMisionBL<ClsMision>(int Id)  
+		   - ComrpobarHora Boolean() {if(hora actual < 00:00) true?null}
+
+
+ViewModel:
+----------------------------------------------------------------------------------
+creo que no hace falta un viewModel
+
+
+UI:
+----------------------------------------------------------------------------------
+
+	Controllers:
+	----------------------------------------------------------------------------------
+		   -  List<ClsMision> listaMisiones 
+		   - ClsMision mision;
+		   + IActionResult Index()
+		   + IActionResult Detalles()
+	
+
+	Views:
+	----------------------------------------------------------------------------------
+		Home:
+		----------------------------------------------------------------------------------
+			index.cshml
+			Detalles.cshml
+
+	
+

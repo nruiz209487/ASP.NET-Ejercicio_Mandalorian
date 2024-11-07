@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (ViewBag.Mensaje != null)
+{
+    <p>@ViewBag.Mensaje</p>
+}
+else
+{
+    <form asp-action="Detalles" method="post">
+        <select name="id">
+
+            @foreach (var mision in Model)
+            {
+                <option value="@mision.Id">@mision.Titulo</option>
+            }
+        </select>
+
+        <button type="submit">Ver detalles de la mision</button>
+
+    </form>
+    
+    <img src="~/Imgs/logo.png" alt="grogu" />
+}
