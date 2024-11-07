@@ -54,7 +54,7 @@ namespace EjercicioMandalorianASP.Models.BL
         /// <returns>devuelve un booleano</returns>
         private static Boolean comprobarHora()
         {
-            return true;  // return DateTime.Now.Hour > 8 && DateTime.Now.Hour < 24;
+            return DateTime.Now.Hour > 8 && DateTime.Now.Hour < 24;
         }
     }
 }
